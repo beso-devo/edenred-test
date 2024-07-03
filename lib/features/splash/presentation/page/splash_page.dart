@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/injection_container.dart';
-import '../../../../core/util/colored_status_bar.dart';
 import '../../../../core/util/colors.dart';
 import '../../../../core/util/generate_screen.dart';
 import '../bloc/splash_bloc.dart';
@@ -29,12 +28,10 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return BlocListener(
-      bloc: _bloc,
-      listener: (BuildContext context, SplashState state) {
-        goToTruthPage(state.userStatus);
-      },
-      child: ColoredStatusBar(
-        color: MAIN1,
+        bloc: _bloc,
+        listener: (BuildContext context, SplashState state) {
+          goToTruthPage(state.userStatus);
+        },
         child: Scaffold(
           appBar: PreferredSize(
               preferredSize: Size.fromHeight(0.0),
@@ -68,9 +65,7 @@ class _SplashPageState extends State<SplashPage> {
               ),
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 
   void goToTruthPage(int status) {
@@ -84,7 +79,6 @@ class _SplashPageState extends State<SplashPage> {
       //   Navigator.pushNamedAndRemoveUntil(
       //       context, GeneralScreens.MAIN_PAGE, (route) => false);
       //   break;
-
     }
   }
 }
