@@ -54,6 +54,7 @@ On another hand, from case 05 into case 07, these cases have to be implemented a
 I also did these checking cases in the frontend but I didn't reflect the response on the 
 UI since the idea is clear, you can check the [BeneficiaryTopUpRepositoryImpl] class 
 in [topUp] method, I left some notes and commented code and it's suffices.
+
 You can check the image below:
 ![img.png](img.png)
 
