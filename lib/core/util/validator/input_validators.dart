@@ -30,7 +30,11 @@ class InputValidators {
 
   bool validateUAEPhoneInput(String phone) {
     /// Here we can list the all cases of UAE phone number...
-    if (phone.startsWith('0') || phone.length < 9 || !isNumeric(phone)) {
+    print("phone.length = ${phone.length}");
+    if (phone.startsWith('0') ||
+        phone.length < 9 ||
+        phone.length > 9 ||
+        !isNumeric(phone)) {
       return false;
     } else {
       return true;

@@ -5,6 +5,7 @@ import 'package:edenred_test/core/error/failures.dart';
 import 'package:injectable/injectable.dart';
 import '../../../../core/data/models/base_local_data_source.dart';
 import '../../../../core/data/repository/base_repository.dart';
+import '../../../../core/domain/entity/beneficiary_entity.dart';
 import '../../../../core/domain/entity/user_entity.dart';
 import '../../../../core/network/network_info.dart';
 import '../../../../core/util/constants.dart';
@@ -68,45 +69,45 @@ class BeneficiaryTopUpRepositoryImpl extends BaseRepositoryImpl
       /// I'll not reflect the checking cases into the UI since the idea is clear.
       ///
 
-      // final user = baseLocalDataSource.user;
-      // UserEntity currentUser = UserEntity.fromJson(json.decode(user!));
-      // Map<int, num> beneficiariesAmounts = {};
-      // num totalAmount = 0.0;
-      // List<TopUpEntity> histories = [
-      //   TopUpEntity(
-      //       id: 1,
-      //       beneficiaryEntity: BeneficiaryEntity(
-      //           id: 1, nickName: 'Basel', phoneNumber: '+971552711410'),
-      //       amount: 15.2),
-      //   TopUpEntity(
-      //       id: 2,
-      //       beneficiaryEntity: BeneficiaryEntity(
-      //           id: 2, nickName: 'Islam', phoneNumber: '+971553434342'),
-      //       amount: 30.5),
-      //   TopUpEntity(
-      //       id: 3,
-      //       beneficiaryEntity: BeneficiaryEntity(
-      //           id: 3, nickName: 'Alaa', phoneNumber: '+9715523112121'),
-      //       amount: 25.4),
-      //   TopUpEntity(
-      //       id: 1,
-      //       beneficiaryEntity: BeneficiaryEntity(
-      //           id: 1, nickName: 'Basel', phoneNumber: '+971552711410'),
-      //       amount: 100.85),
-      // ];
-      // histories.forEach((element) {
-      //   totalAmount = totalAmount + element.amount;
-      //   if (beneficiariesAmounts.containsKey(element.beneficiaryEntity.id)) {
-      //     beneficiariesAmounts[element.beneficiaryEntity.id] =
-      //         beneficiariesAmounts[element.beneficiaryEntity.id]! +
-      //             element.amount;
-      //   } else {
-      //     beneficiariesAmounts[element.beneficiaryEntity.id] = element.amount;
-      //   }
-      // });
-      // print("Cluster Depending on the beneficiaries' ids = " + beneficiariesAmounts.toString());
-      // print("Total Top UPs = " + totalAmount.toString());
-      // print("User Verification Status = ${currentUser.isVerified}");
+      final user = baseLocalDataSource.user;
+      UserEntity currentUser = UserEntity.fromJson(json.decode(user!));
+      Map<int, num> beneficiariesAmounts = {};
+      num totalAmount = 0.0;
+      List<TopUpEntity> histories = [
+        TopUpEntity(
+            id: 1,
+            beneficiaryEntity: BeneficiaryEntity(
+                id: 1, nickName: 'Basel', phoneNumber: '+971552711410'),
+            amount: 15.2),
+        TopUpEntity(
+            id: 2,
+            beneficiaryEntity: BeneficiaryEntity(
+                id: 2, nickName: 'Islam', phoneNumber: '+971553434342'),
+            amount: 30.5),
+        TopUpEntity(
+            id: 3,
+            beneficiaryEntity: BeneficiaryEntity(
+                id: 3, nickName: 'Alaa', phoneNumber: '+9715523112121'),
+            amount: 25.4),
+        TopUpEntity(
+            id: 1,
+            beneficiaryEntity: BeneficiaryEntity(
+                id: 1, nickName: 'Basel', phoneNumber: '+971552711410'),
+            amount: 100.85),
+      ];
+      histories.forEach((element) {
+        totalAmount = totalAmount + element.amount;
+        if (beneficiariesAmounts.containsKey(element.beneficiaryEntity.id)) {
+          beneficiariesAmounts[element.beneficiaryEntity.id] =
+              beneficiariesAmounts[element.beneficiaryEntity.id]! +
+                  element.amount;
+        } else {
+          beneficiariesAmounts[element.beneficiaryEntity.id] = element.amount;
+        }
+      });
+      print("Cluster Depending on the beneficiaries' ids = " + beneficiariesAmounts.toString());
+      print("Total Top UPs = " + totalAmount.toString());
+      print("User Verification Status = ${currentUser.isVerified}");
 
       userE.balance = (userE.balance - params.amount) - 1;
       print("balance after = ${userE.balance}");
