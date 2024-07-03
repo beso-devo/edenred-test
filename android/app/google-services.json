@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "233333323926",
+    "project_id": "edenred-c3p",
+    "storage_bucket": "edenred-c3p.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233333323926:android:7b6bfdba833f9f38746ab7",
+        "android_client_info": {
+          "package_name": "com.example.edenred_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeWAR9enArCjLBRrYuT4KxGR4wIOZiwd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
