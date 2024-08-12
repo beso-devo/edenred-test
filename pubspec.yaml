@@ -46,6 +46,11 @@ dependencies:
   firebase_core: ^2.24.2
   flutter_launcher_icons: ^0.13.1
   sizer: ^2.0.15
+  riverpod:
+  freezed:
+  riverpod_annotation:
+  flutter_riverpod:
+  riverpod_generator:
 
   flutter:
     sdk: flutter
